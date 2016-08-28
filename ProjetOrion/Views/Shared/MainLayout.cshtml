@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-offset-1 col-lg-10 col-md-offet-1 col-md-10 col-sm-offset-1 col-sm-10">
+            <header class="page-header">
+                @RenderSection("Menu")
+            </header>
+            <div class="row">
+                @RenderBody()
+            </div>
+            <div class="row">
+                <footer>
+                    @RenderSection("Footer")
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Content/js/bootstrap.js"></script>
+    @RenderSection("ScriptJs", required:false)
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿@model dynamic
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Accueil</title>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+<div>
+    <div class="container-fluid">
+        @Html.ActionLink("Commercial", "IndexCommercial", "Commercial", new {}, new {@class="btn btn-primary"})
+    </div>
+</div>
+</body>
+</html>

@@ -64,3 +64,15 @@ D:\ProjetGit\AFProject\ProjetOrion\bin\System.Web.Mvc.xml
 D:\ProjetGit\AFProject\ProjetOrion\obj\Debug\ProjetOrion.csprojResolveAssemblyReference.cache
 D:\ProjetGit\AFProject\ProjetOrion\obj\Debug\ProjetOrion.dll
 D:\ProjetGit\AFProject\ProjetOrion\obj\Debug\ProjetOrion.pdb
+D:\ProjetGit\AFProject\ProjetOrion\bin\EntityFramework.dll
+D:\ProjetGit\AFProject\ProjetOrion\bin\EntityFramework.SqlServer.dll
+D:\ProjetGit\AFProject\ProjetOrion\bin\MySql.Data.dll
+D:\ProjetGit\AFProject\ProjetOrion\bin\MySql.Data.Entity.EF6.dll
+D:\ProjetGit\AFProject\ProjetOrion\bin\EntityFramework.xml
+D:\ProjetGit\AFProject\ProjetOrion\bin\EntityFramework.SqlServer.xml
+D:\ProjetGit\AFProject\ProjetOrion\bin\fr\System.Web.Razor.resources.dll
+D:\ProjetGit\AFProject\ProjetOrion\bin\fr\System.Web.Webpages.resources.dll
+D:\ProjetGit\AFProject\ProjetOrion\bin\fr\System.Web.Webpages.Deployment.resources.dll
+D:\ProjetGit\AFProject\ProjetOrion\bin\fr\System.Web.Webpages.Razor.resources.dll
+D:\ProjetGit\AFProject\ProjetOrion\bin\fr\System.Web.Helpers.resources.dll
+D:\ProjetGit\AFProject\ProjetOrion\bin\fr\System.Web.Mvc.resources.dll

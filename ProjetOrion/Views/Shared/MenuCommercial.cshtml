@@ -1,15 +1,16 @@
 ﻿<nav class="navbar navbar-default menu">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Afrique Compétences</a>
+            @Html.ActionLink("Afrique Compétences", "IndexCommercial", "Commercial", new { }, new { @class = "navbar-brand" })
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"> <a href="#">Accueil</a> </li>
+            <li>@Html.ActionLink("Accueil", "IndexCommercial", "Commercial", new { }, new { @class = "active", @id="accueilCom" }) </li>
             <li class="dropdown">
-                <a data-toggle="dropdown" class="menu_deroulant" href="#">Contacts <b class="caret"></b></a>
+                <a data-toggle="dropdown" class="menu_deroulant" href="#">Clients <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Créer un contact</a></li>
-                    <li><a href="#">Tous les contacts</a></li>
+                    <li><a href="#">Ajouter un client</a></li>
+                    <li><a href="#">Ajouter un cont</a></li>
+                    <li><a href="#">Mes clients</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -27,7 +28,7 @@
                 </ul>
             </li>
             <li> <a href="#">Compte</a> </li>
-            <li> <a href="#">Profil</a> </li>
+            <li>@Html.ActionLink("Profil", "ProfilUtilisateur", "Commercial") </li>
         </ul>
     </div>
 </nav>

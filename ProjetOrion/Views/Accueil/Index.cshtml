@@ -14,7 +14,17 @@
 <body>
 <div>
     <div class="container-fluid">
-        @Html.ActionLink("Commercial", "IndexCommercial", "Commercial", new {}, new {@class="btn btn-primary"})
+        <div class="row">
+            <div class="col-lg-2">
+                @Html.ActionLink("Commercial", "IndexCommercial", "Commercial", new { }, new { @class = "btn btn-primary" })
+            </div>
+            <div class="col-lg-offset-2 col-lg-2">
+                @Html.ActionLink("Manager", "IndexManager", "Manager", new { }, new { @class = "btn btn-primary" })
+            </div>
+            <div class="col-lg-offset-2 col-lg-2">
+                @Html.ActionLink("Super-Manager", "IndexSuperManager", "SuperManager", new { }, new { @class = "btn btn-primary" })
+            </div>
+        </div>
     </div>
 </div>
 </body>

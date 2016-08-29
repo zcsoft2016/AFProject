@@ -14,5 +14,9 @@ namespace ProjetOrion.Controllers
             return View();
         }
 
+        public ActionResult ProfilUtilisateur()
+        {
+            return View();
+        }
     }
 }

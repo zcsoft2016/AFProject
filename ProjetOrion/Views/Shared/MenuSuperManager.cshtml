@@ -1,0 +1,50 @@
+﻿<nav class="navbar navbar-default menu">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            @Html.ActionLink("Afrique Compétences", "IndexSuperManager", "SuperManager", new { }, new { @class = "navbar-brand" })
+        </div>
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Accueil", "IndexSuperManager", "SuperManager", new { }, new { @class = "active", @id = "accueilCom" }) </li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="menu_deroulant" href="#">Clients <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Ajouter un client</a></li>
+                    <li><a href="#">Ajouter un cont</a></li>
+                    <li><a href="#">Mes clients</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="menu_deroulant" href="#">Formations <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Mes formations</a></li>
+                    <li><a href="#">Toutes les formations</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="menu_deroulant" href="#">Activités <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Créer une activité</a></li>
+                    <li><a href="#">Toutes les activités</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="menu_deroulant" href="#">Commercial <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Ajouter un commercial</a></li>
+                    <li><a href="#">Tous les commerciaux</a></li>
+                </ul>
+            </li>
+            <li> <a href="#">Reporting</a> </li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="menu_deroulant" href="#">Administration <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Ajouter un utilisateur", "AjouterUtilisateur", "SuperManager", new { }, new { @class = "active", @id = "accueilCom" }) </li>
+                    <li><a href="#">Tous les utilisateur</a></li>
+                </ul>
+            </li>
+            <li> <a href="#">Compte</a> </li>
+            <li>@Html.ActionLink("Profil", "ProfilUtilisateur", "SuperManager") </li>
+        </ul>
+    </div>
+</nav>
+

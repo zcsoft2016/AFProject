@@ -1,0 +1,15 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Profil";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+@section Menu {
+    @Html.Partial("MenuManager")
+}
+@section Footer {
+
+}
+
+@Html.Partial("ContenuProfilUtilisateur")

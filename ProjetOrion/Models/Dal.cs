@@ -8,31 +8,37 @@ namespace ProjetOrion.Models
 {
     public class Dal : IDal
     {
-        private readonly BddContext bddContext;
+        private readonly DbContext _dbContext;
 
         public Dal()
         {
-            bddContext = new BddContext();
+            _dbContext = new DbContext();
         }
 
         public void AjouterUtilisateur(Utilisateur utilisateur)
         {
-            throw new NotImplementedException();
+            _dbContext.Utilisateurs.Add(utilisateur);
+            _dbContext.SaveChanges();
         }
 
         public bool PseudoExiste(string pseudo)
         {
-            throw new NotImplementedException();
+            var utilisateur =
+                _dbContext.Utilisateurs.SingleOrDefault(
+                    user => user.Pseudo.Equals(pseudo, StringComparison.OrdinalIgnoreCase));
+            if (utilisateur != null)
+                return true;
+            return false;
         }
 
         public List<Utilisateur> ObtenirTousLesUtilisateurs()
         {
-            return bddContext.Utilisateurs.ToList();
+            return _dbContext.Utilisateurs.ToList();
         }
 
         public void Dispose()
         {
-            bddContext.Dispose();
+            _dbContext.Dispose();
         }
 
     }

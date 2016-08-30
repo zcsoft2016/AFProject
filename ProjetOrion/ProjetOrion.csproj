@@ -125,7 +125,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BddContext.cs" />
+    <Compile Include="Migrations\201608302110469_utilisateur.cs" />
+    <Compile Include="Migrations\201608302110469_utilisateur.Designer.cs">
+      <DependentUpon>201608302110469_utilisateur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DbContext.cs" />
     <Compile Include="Models\Dal.cs" />
     <Compile Include="Models\IDal.cs" />
     <Compile Include="Models\PublicationViewModel.cs" />
@@ -164,6 +169,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608302110469_utilisateur.resx">
+      <DependentUpon>201608302110469_utilisateur.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

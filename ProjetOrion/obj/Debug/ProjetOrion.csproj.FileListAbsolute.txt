@@ -76,3 +76,5 @@ D:\ProjetGit\AFProject\ProjetOrion\bin\fr\System.Web.Webpages.Deployment.resourc
 D:\ProjetGit\AFProject\ProjetOrion\bin\fr\System.Web.Webpages.Razor.resources.dll
 D:\ProjetGit\AFProject\ProjetOrion\bin\fr\System.Web.Helpers.resources.dll
 D:\ProjetGit\AFProject\ProjetOrion\bin\fr\System.Web.Mvc.resources.dll
+D:\ProjetGit\AFProject\ProjetOrion\obj\Debug\ProjetOrion.Migrations.utilisateur.resources
+D:\ProjetGit\AFProject\ProjetOrion\obj\Debug\ProjetOrion.csproj.GenerateResource.Cache

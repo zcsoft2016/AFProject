@@ -152,9 +152,9 @@
     <Content Include="Views\Shared\ContenuProfilUtilisateur.cshtml" />
     <None Include="Views\Manager\ProfilUtilisateur.cshtml" />
     <None Include="Views\SuperManager\AjouterUtilisateur.cshtml" />
-    <None Include="Views\SuperManager\EnregistrerUtilisateur.cshtml" />
     <None Include="Views\SuperManager\IndexSuperManager.cshtml" />
     <None Include="Views\SuperManager\ProfilUtilisateur.cshtml" />
+    <None Include="Views\SuperManager\TousLesUtilisateurs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

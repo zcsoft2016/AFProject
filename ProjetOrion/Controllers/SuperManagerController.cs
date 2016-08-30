@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ProjetOrion.Models;
 
 namespace ProjetOrion.Controllers
 {
@@ -25,7 +26,22 @@ namespace ProjetOrion.Controllers
         }
 
         [HttpPost]
-        public ActionResult EnregistrerUtilisateur(int? id, string pseudo, string email, string motDePasse, string confirmMotDePasse)
+        public ActionResult AjouterUtilisateur(Utilisateur utilisateur)
+        {
+            if (!ModelState.IsValid)
+            {
+                //todo remplacer par de l'ajax
+                ViewBag.MessageErreur = "Erreur lors de l'enregistrement";
+                return View(utilisateur);
+            }
+            using (IDal dal = new Dal())
+            {
+                dal.AjouterUtilisateur(utilisateur);
+                return RedirectToAction("TousLesUtilisateurs");
+            }
+        }
+
+        public ActionResult TousLesUtilisateurs()
         {
             return View();
         }

@@ -8,6 +8,8 @@ namespace ProjetOrion.Models
 {
     public interface IDal : IDisposable
     {
+        void AjouterUtilisateur(Utilisateur utilisateur);
+        bool PseudoExiste(string pseudo);
         List<Utilisateur> ObtenirTousLesUtilisateurs();
     }
 }

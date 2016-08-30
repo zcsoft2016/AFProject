@@ -15,6 +15,16 @@ namespace ProjetOrion.Models
             bddContext = new BddContext();
         }
 
+        public void AjouterUtilisateur(Utilisateur utilisateur)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool PseudoExiste(string pseudo)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Utilisateur> ObtenirTousLesUtilisateurs()
         {
             return bddContext.Utilisateurs.ToList();

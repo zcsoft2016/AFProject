@@ -5,6 +5,7 @@ namespace ProjetOrion.Models
     public class Utilisateur
     {
         public int Id { get; set; }
+
         [Required(ErrorMessage = "Veuillez saisir le pseudonyme")]
         [Display(Name = "Pseudonyme")]
         public string Pseudo { get; set; }
@@ -22,7 +23,10 @@ namespace ProjetOrion.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmer le mot de passe ")]
-        [Compare("MotDePasse", ErrorMessage = "Le mot de passe et le mot de passe de confirmation ne correspondent pas.")]
+        [Compare("MotDePasse", ErrorMessage = "Le mot de passe et le mot de passe de confirmation ne correspondent pas."
+            )]
         public string ConfirmerMotDePasse { get; set; }
+
+        public string Photo { get; set; }
     }
 }

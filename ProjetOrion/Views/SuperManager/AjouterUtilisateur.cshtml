@@ -21,10 +21,10 @@
                     <div class="col-lg-4 col-md-4 col-sm-4">
                         @Html.LabelFor(user => user.Pseudo, new { @class = "control-label pull-left" })
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-5 col-md-5 col-sm-5">
                         @Html.TextBoxFor(user => user.Pseudo, new {@class = "form-control", @id = "pseudo"})
                     </div>
-                    <div class="col-lg-2  col-md-2 col-sm-2">
+                    <div class="col-lg-3  col-md-3 col-sm-3">
                         @Html.ValidationMessageFor(user=>user.Pseudo)
                     </div>
                 </div>
@@ -32,10 +32,10 @@
                     <div class="col-lg-4 col-md-4 col-sm-4">
                         @Html.LabelFor(user => user.Email, new { @class = "control-label pull-left" })
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-5 col-md-5 col-sm-5">
                         @Html.TextBoxFor(user => user.Email, new {@class = "form-control", @type = "email", @id = "email" })
                     </div>
-                    <div class="col-lg-2  col-md-2 col-sm-2">
+                    <div class="col-lg-3  col-md-3 col-sm-3">
                         @Html.ValidationMessageFor(user => user.Email)
                     </div>
                 </div>
@@ -43,10 +43,10 @@
                     <div class="col-lg-4 col-md-4 col-sm-4">
                         @Html.LabelFor(user => user.MotDePasse, new { @class = "control-label pull-left" })
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-5 col-md-5 col-sm-5">
                         @Html.PasswordFor(user => user.MotDePasse, new {@class = "form-control", @id = "motDePasse"})
                     </div>
-                    <div class="col-lg-2  col-md-2 col-sm-2">
+                    <div class="col-lg-3  col-md-3 col-sm-3">
                         @Html.ValidationMessageFor(user => user.MotDePasse)
                     </div>
                 </div>
@@ -54,12 +54,12 @@
                     <div class="col-lg-4  col-md-4 col-sm-4">
                         @Html.LabelFor(user => user.ConfirmerMotDePasse, new { @class = "control-label pull-left" })
                     </div>
-                    <div class="col-lg-6  col-md-6 col-sm-6">
-                        @Html.PasswordFor(user => user.ConfirmerMotDePasse, new { @class = "form-control", @id = "confirmMotDePasse" })
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-2">
-                        @Html.ValidationMessageFor(user => user.ConfirmerMotDePasse)
-                    </div>
+                    <div class="col-lg-5  col-md-5 col-sm-5">
+                            @Html.PasswordFor(user => user.ConfirmerMotDePasse, new {@class = "form-control", @id = "confirmMotDePasse"})
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            @Html.ValidationMessageFor(user => user.ConfirmerMotDePasse)
+                        </div>
                 </div>
                 <div class="form-group row">
                     <input type="submit" class="btn btn-primary pull-left" id="sauvegarder" value="Sauvegarder" />

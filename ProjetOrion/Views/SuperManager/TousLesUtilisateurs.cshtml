@@ -1,4 +1,5 @@
-﻿@model ProjetOrion.Models.Utilisateur
+﻿@using ProjetOrion.Models
+@model ProjetOrion.Models.Utilisateur
 
 @{
     ViewBag.Title = "Tous les utilisateurs - Super Manager";
@@ -13,3 +14,21 @@
 }
 
 <h1>Tous les utilisateurs</h1>
+
+<section class="row">
+    @using (var dal = new Dal())
+    {
+        var utilisateurs = dal.ObtenirTousLesUtilisateurs();
+        foreach (var utilisateur in utilisateurs)
+        {
+            <div class="col-xs-3 col-sm-2 col-md-1">
+                <div class="row">
+                    @Html.ActionImage("ProfilUtilisateur", "SuperManager", new {}, @utilisateur.Photo, @utilisateur.Pseudo)
+                </div>
+                <div class="row">
+                    <span class="center-block text-center">@utilisateur.Pseudo</span>
+                </div>
+            </div>
+        }
+    }
+</section>

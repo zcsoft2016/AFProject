@@ -5,14 +5,16 @@ namespace ProjetOrion.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ProjetOrion.Models.DbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ProjetOrion.Models.AfCompContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            // register mysql code generator
+            SetSqlGenerator("MySql.Data.MySqlClient", new MySql.Data.Entity.MySqlMigrationSqlGenerator());
         }
 
-        protected override void Seed(ProjetOrion.Models.DbContext context)
+        protected override void Seed(ProjetOrion.Models.AfCompContext context)
         {
             //  This method will be called after migrating to the latest version.
 

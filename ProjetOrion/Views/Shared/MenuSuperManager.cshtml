@@ -39,7 +39,7 @@
                 <a data-toggle="dropdown" class="menu_deroulant" href="#">Administration <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>@Html.ActionLink("Ajouter un utilisateur", "AjouterUtilisateur", "SuperManager", new { }, new { @class = "active", @id = "accueilCom" }) </li>
-                    <li><a href="#">Tous les utilisateurs</a></li>
+                    <li>@Html.ActionLink("Tous les utilisateurs", "TousLesUtilisateurs", "SuperManager", new { }, new { @class = "active", @id = "accueilCom" }) </li>
                 </ul>
             </li>
             <li> <a href="#">Compte</a> </li>

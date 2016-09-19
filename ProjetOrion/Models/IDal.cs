@@ -10,6 +10,8 @@ namespace ProjetOrion.Models
     {
         void AjouterUtilisateur(Utilisateur utilisateur);
         bool PseudoExiste(string pseudo);
+        bool EmailExiste(string email);
+        Utilisateur Authentifier(string pseudoOuEmail, string motDePasse);
         List<Utilisateur> ObtenirTousLesUtilisateurs();
     }
 }

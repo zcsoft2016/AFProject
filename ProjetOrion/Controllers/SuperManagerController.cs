@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -28,14 +29,23 @@ namespace ProjetOrion.Controllers
         [HttpPost]
         public ActionResult AjouterUtilisateur(Utilisateur utilisateur)
         {
-            if (!ModelState.IsValid)
-            {
-                //todo remplacer par de l'ajax
-                ViewBag.MessageErreur = "Erreur lors de l'enregistrement";
-                return View(utilisateur);
-            }
             using (IDal dal = new Dal())
             {
+                if (dal.PseudoExiste(utilisateur.Pseudo))
+                {
+                    ModelState.AddModelError("Pseudo", "Ce pseudo existe déjà");
+                    return View(utilisateur);
+                }
+                if (dal.EmailExiste(utilisateur.Email))
+                {
+                    ModelState.AddModelError("Email", "Cet email existe déjà");
+                    return View(utilisateur);
+                }
+                if (!ModelState.IsValid)
+                    return View(utilisateur);
+                //utilisateur.Photo = Path.Combine(Server.MapPath("~/Content/img/profiles"), "default.jpg");
+                //todo to refactor
+                utilisateur.Photo = "~/Content/img/pictures/profiles/" + "default.jpg";
                 dal.AjouterUtilisateur(utilisateur);
                 return RedirectToAction("TousLesUtilisateurs");
             }

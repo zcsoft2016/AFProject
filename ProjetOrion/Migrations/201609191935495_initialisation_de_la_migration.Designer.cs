@@ -7,13 +7,13 @@ namespace ProjetOrion.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class utilisateur : IMigrationMetadata
+    public sealed partial class initialisation_de_la_migration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(utilisateur));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initialisation_de_la_migration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201608302110469_utilisateur"; }
+            get { return "201609191935495_initialisation_de_la_migration"; }
         }
         
         string IMigrationMetadata.Source

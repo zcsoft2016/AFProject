@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace ProjetOrion.Controllers
 {
+    [Authorize]
     public class CommercialController : Controller
     {
         // GET: Commercial

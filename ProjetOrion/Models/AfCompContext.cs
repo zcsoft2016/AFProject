@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjetOrion.Models
 {
-    public class DbContext : System.Data.Entity.DbContext
+    public class AfCompContext : DbContext
     {
         public DbSet<Utilisateur> Utilisateurs { get; set; }
     }

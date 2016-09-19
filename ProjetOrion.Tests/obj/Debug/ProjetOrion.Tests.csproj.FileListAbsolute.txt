@@ -69,3 +69,10 @@ D:\ProjetGit\AFProject\ProjetOrion.Tests\bin\Debug\fr\System.Web.Razor.resources
 D:\ProjetGit\AFProject\ProjetOrion.Tests\bin\Debug\fr\System.Web.WebPages.Razor.resources.dll
 D:\ProjetGit\AFProject\ProjetOrion.Tests\bin\Debug\fr\System.Web.WebPages.resources.dll
 D:\ProjetGit\AFProject\ProjetOrion.Tests\bin\Debug\fr\System.Web.WebPages.Deployment.resources.dll
+D:\ProjetGit\AFProject\ProjetOrion.Tests\bin\Debug\ProjetOrion.Tests.dll.config
+D:\ProjetGit\AFProject\ProjetOrion.Tests\bin\Debug\EntityFramework.SqlServer.dll
+D:\ProjetGit\AFProject\ProjetOrion.Tests\bin\Debug\nunit.framework.dll
+D:\ProjetGit\AFProject\ProjetOrion.Tests\bin\Debug\EntityFramework.SqlServer.xml
+D:\ProjetGit\AFProject\ProjetOrion.Tests\bin\Debug\nunit.framework.xml
+D:\ProjetGit\AFProject\ProjetOrion.Tests\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\ProjetGit\AFProject\ProjetOrion.Tests\bin\Debug\MySql.Data.dll

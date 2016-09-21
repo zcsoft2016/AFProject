@@ -60,5 +60,28 @@ namespace ProjetOrion.Models
             _afCompContext.Dispose();
         }
 
+        public Utilisateur ObtenirUtilisateur(int id)
+        {
+            var utilisateurs = _afCompContext.Utilisateurs.ToList();
+            return utilisateurs.SingleOrDefault(user => user.Id == id);
+        }
+
+        public Utilisateur ObtenirUtilisateur(string pseudo)
+        {
+            var utilisateurs = _afCompContext.Utilisateurs.ToList();
+            return utilisateurs.SingleOrDefault(user => user.Pseudo.Equals(pseudo));
+        }
+
+        public void ModifierUtilisateur(Utilisateur user, string motDePasse, string photo)
+        {
+            var utilisateur = ObtenirUtilisateur(user.Pseudo);
+            if (utilisateur == null)
+                return;
+            if (!string.IsNullOrEmpty(motDePasse))
+                utilisateur.MotDePasse = motDePasse;
+            if (!string.IsNullOrEmpty(photo))
+                utilisateur.Photo = photo;
+            _afCompContext.SaveChanges();
+        }
     }
 }

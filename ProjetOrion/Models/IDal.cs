@@ -13,5 +13,8 @@ namespace ProjetOrion.Models
         bool EmailExiste(string email);
         Utilisateur Authentifier(string pseudoOuEmail, string motDePasse);
         List<Utilisateur> ObtenirTousLesUtilisateurs();
+        Utilisateur ObtenirUtilisateur(int id);
+        Utilisateur ObtenirUtilisateur(string pseudo);
+        void ModifierUtilisateur(Utilisateur user, string motDePasse, string photo);
     }
 }

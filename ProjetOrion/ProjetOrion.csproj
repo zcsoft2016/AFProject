@@ -105,7 +105,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\pictures\profiles\default.jpg" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\style.css" />
@@ -131,6 +130,14 @@
     <Compile Include="Migrations\201609191935495_initialisation_de_la_migration.cs" />
     <Compile Include="Migrations\201609191935495_initialisation_de_la_migration.Designer.cs">
       <DependentUpon>201609191935495_initialisation_de_la_migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609211357536_image.cs" />
+    <Compile Include="Migrations\201609211357536_image.Designer.cs">
+      <DependentUpon>201609211357536_image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609211401548_del_image.cs" />
+    <Compile Include="Migrations\201609211401548_del_image.Designer.cs">
+      <DependentUpon>201609211401548_del_image.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AfCompContext.cs" />
@@ -176,8 +183,16 @@
     <EmbeddedResource Include="Migrations\201609191935495_initialisation_de_la_migration.resx">
       <DependentUpon>201609191935495_initialisation_de_la_migration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609211357536_image.resx">
+      <DependentUpon>201609211357536_image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609211401548_del_image.resx">
+      <DependentUpon>201609211401548_del_image.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

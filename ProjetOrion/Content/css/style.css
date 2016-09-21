@@ -1,5 +1,5 @@
 ﻿body {
-     /*background-color:#DDD;*/
+     background-color:#DDD;
 }
 img {
      width: 100%;
@@ -19,3 +19,7 @@ img {
 	.validation-summary-errors { color : #f00; font-weight: bold}
 	.input-validation-error { border: 2px solid #f00;background-color : #fee}
 	input[type="checkbox"].input-validation-error { outline: 2px solid #f00;}
+
+.row img {
+    margin: 2px;
+}

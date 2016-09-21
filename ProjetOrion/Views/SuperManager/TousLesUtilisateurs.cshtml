@@ -23,7 +23,7 @@
         {
             <div class="col-xs-3 col-sm-2 col-md-1">
                 <div class="row">
-                    @Html.ActionImage("ProfilUtilisateur", "SuperManager", new {}, @utilisateur.Photo, @utilisateur.Pseudo)
+                    @Html.ActionImage("ProfilUtilisateur", "SuperManager", new {id = utilisateur.Id }, @utilisateur.Photo, @utilisateur.Pseudo)
                 </div>
                 <div class="row">
                     <span class="center-block text-center">@utilisateur.Pseudo</span>

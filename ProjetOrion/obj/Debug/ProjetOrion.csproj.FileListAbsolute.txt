@@ -78,3 +78,5 @@ D:\ProjetGit\AFProject\ProjetOrion\bin\fr\System.Web.Helpers.resources.dll
 D:\ProjetGit\AFProject\ProjetOrion\bin\fr\System.Web.Mvc.resources.dll
 D:\ProjetGit\AFProject\ProjetOrion\obj\Debug\ProjetOrion.Migrations.initialisation_de_la_migration.resources
 D:\ProjetGit\AFProject\ProjetOrion\obj\Debug\ProjetOrion.csproj.GenerateResource.Cache
+D:\ProjetGit\AFProject\ProjetOrion\obj\Debug\ProjetOrion.Migrations.image.resources
+D:\ProjetGit\AFProject\ProjetOrion\obj\Debug\ProjetOrion.Migrations.del_image.resources

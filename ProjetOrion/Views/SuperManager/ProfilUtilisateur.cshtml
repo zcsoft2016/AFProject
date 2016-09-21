@@ -1,4 +1,4 @@
-﻿@model dynamic
+﻿@model  ProjetOrion.Models.Utilisateur
 
 @{
     ViewBag.Title = "Profil";
@@ -12,4 +12,4 @@
 
 }
 
-@Html.Partial("ContenuProfilUtilisateur")
+@Html.Partial("ContenuProfilUtilisateur", @Model)

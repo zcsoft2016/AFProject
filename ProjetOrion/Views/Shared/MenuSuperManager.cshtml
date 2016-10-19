@@ -1,4 +1,8 @@
-﻿<nav class="navbar navbar-default menu">
+﻿@using ProjetOrion.Models
+@model ProjetOrion.Models.Utilisateur
+
+
+<nav class="navbar navbar-default menu">
     <div class="container-fluid">
         <div class="navbar-header">
             @Html.ActionLink("Afrique Compétences", "IndexSuperManager", "SuperManager", new { }, new { @class = "navbar-brand" })
@@ -30,20 +34,26 @@
             <li class="dropdown">
                 <a data-toggle="dropdown" class="menu_deroulant" href="#">Commercial <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Ajouter un commercial</a></li>
-                    <li><a href="#">Tous les commerciaux</a></li>
+                    <li>@Html.ActionLink("Ajouter un commercial", "AjouterCommercial", "SuperManager", new { }, new { @class = "active"}) </li>
+                    <li>@Html.ActionLink("Tous les commerciaux", "TousLesCommerciaux", "SuperManager", new { }, new { @class = "active"}) </li>
                 </ul>
             </li>
             <li> <a href="#">Reporting</a> </li>
             <li class="dropdown">
                 <a data-toggle="dropdown" class="menu_deroulant" href="#">Administration <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li>@Html.ActionLink("Ajouter un utilisateur", "AjouterUtilisateur", "SuperManager", new { }, new { @class = "active", @id = "accueilCom" }) </li>
-                    <li>@Html.ActionLink("Tous les utilisateurs", "TousLesUtilisateurs", "SuperManager", new { }, new { @class = "active", @id = "accueilCom" }) </li>
+                    <li>@Html.ActionLink("Ajouter un utilisateur", "AjouterUtilisateur", "SuperManager", new { }, new { @class = "active" }) </li>
+                    <li>@Html.ActionLink("Tous les utilisateurs", "TousLesUtilisateurs", "SuperManager", new { }, new { @class = "active" }) </li>
                 </ul>
             </li>
             <li> <a href="#">Compte</a> </li>
-            <li>@Html.ActionLink("Profil", "ProfilUtilisateur", "SuperManager") </li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="menu_deroulant" href="#">Profil <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Mon Profil", "ProfilUtilisateur", "SuperManager", new { id = @Model.Id }, null) </li>
+                    <li>@Html.ActionLink("Deconnexion", "Deconnexion", "SuperManager", new { }, new { @class = "active" }) </li>
+                </ul>
+            </li>
         </ul>
     </div>
 </nav>

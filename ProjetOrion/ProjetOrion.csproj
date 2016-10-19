@@ -168,9 +168,11 @@
     <Content Include="Views\Shared\MenuSuperManager.cshtml" />
     <Content Include="Views\Shared\ContenuProfilUtilisateur.cshtml" />
     <None Include="Views\Manager\ProfilUtilisateur.cshtml" />
+    <Content Include="Views\SuperManager\AjouterCommercial.cshtml" />
     <None Include="Views\SuperManager\AjouterUtilisateur.cshtml" />
     <None Include="Views\SuperManager\IndexSuperManager.cshtml" />
     <None Include="Views\SuperManager\ProfilUtilisateur.cshtml" />
+    <Content Include="Views\SuperManager\TousLesCommerciaux.cshtml" />
     <None Include="Views\SuperManager\TousLesUtilisateurs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

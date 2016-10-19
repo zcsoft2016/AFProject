@@ -29,4 +29,21 @@ namespace ProjetOrion.Models
 
         public string Photo { get; set; }
     }
+
+    public class UtilisateurViewModel
+    {
+        public Utilisateur Utilisateur { get; set; }
+        public bool Authentifie { get; set; }
+    }
+
+    public class LoginUtilisateur
+    {
+        public int Id { get; set; }
+        [Required]
+        [Display(Name = "Pseudo")]
+        public string Pseudo { get; set; }
+        [Required]
+        [Display(Name = "Mot de passe")]
+        public string MotDePasse { get; set; }
+    }
 }

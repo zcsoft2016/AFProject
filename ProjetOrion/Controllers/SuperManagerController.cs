@@ -1,21 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using ProjetOrion.Models;
 
 namespace ProjetOrion.Controllers
 {
     public class SuperManagerController : Controller
     {
+        const string ContentImgPicturesProfiles = "/Content/img/pictures/profiles/";
         // GET: SuperManager
+        [Authorize]
         public ActionResult IndexSuperManager()
         {
-            return View();
+            using (var dal = new Dal())
+            {
+                if (HttpContext.User.Identity.IsAuthenticated)
+                {
+                    var idString = HttpContext.User.Identity.Name;
+                    var id = int.Parse(idString);
+                    var utilisateur = dal.ObtenirUtilisateur(id);
+                    return View(utilisateur);
+                }
+                return View("Error");
+            }
         }
 
+        [Authorize]
         public ActionResult ProfilUtilisateur(int id)
         {
             using (var dal = new Dal())
@@ -27,12 +39,20 @@ namespace ProjetOrion.Controllers
             return View();
         }
 
+        //[Authorize]
+        //public ActionResult ProfilUtilisateur(Utilisateur utilisateur)
+        //{
+        //    return View(utilisateur);
+        //}
+
+        [Authorize]
         public ActionResult AjouterUtilisateur()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult AjouterUtilisateur(Utilisateur utilisateur)
         {
             using (IDal dal = new Dal())
@@ -51,18 +71,20 @@ namespace ProjetOrion.Controllers
                     return View(utilisateur);
                 //utilisateur.Photo = Path.Combine(Server.MapPath("~/Content/img/profiles"), "default.jpg");
                 //todo to refactor
-                utilisateur.Photo = "/Content/img/pictures/profiles/" + "default.jpg";
+                utilisateur.Photo = ContentImgPicturesProfiles + "default.jpg";
                 dal.AjouterUtilisateur(utilisateur);
                 return RedirectToAction("TousLesUtilisateurs");
             }
         }
 
+        [Authorize]
         public ActionResult TousLesUtilisateurs()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult ModifierUtilisateur(Utilisateur utilisateur, HttpPostedFileBase myPhoto)
         {
             using (var dal = new Dal())
@@ -81,7 +103,7 @@ namespace ProjetOrion.Controllers
                                 GetFileName(myPhoto.FileName, user.Id));
                             myPhoto.SaveAs(path);
 
-                            photo = "/Content/img/pictures/profiles/" + GetFileName(myPhoto.FileName, user.Id);
+                            photo = ContentImgPicturesProfiles + GetFileName(myPhoto.FileName, user.Id);
                             ViewBag.Message = "File uploaded successfully";
                         }
                         catch (Exception ex)
@@ -100,6 +122,24 @@ namespace ProjetOrion.Controllers
             if (index != -1)
                 return string.Format("{0}{1}", userId, fileName.Substring(index));
             throw new ArgumentException("Error dans l'extension de l'image");
+        }
+
+        [Authorize]
+        public ActionResult AjouterCommercial()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult TousLesCommerciaux()
+        {
+            return View();
+        }
+
+        public ActionResult Deconnexion()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Login");
         }
     }
 }

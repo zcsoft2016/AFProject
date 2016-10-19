@@ -1,4 +1,5 @@
-﻿@model dynamic
+﻿@using ProjetOrion.Models
+@model ProjetOrion.Models.Utilisateur
 
 @{
     ViewBag.Title = "Super Manager";
@@ -6,7 +7,7 @@
 }
 
 @section Menu {
-    @Html.Partial("MenuSuperManager")
+    @Html.Partial("MenuSuperManager", @Model)
 }
 @section Footer {
 
@@ -19,7 +20,10 @@
             <li><a href="#activites" data-toggle="tab">Dernières activités</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane active" id="publications">La liste des publications</div>
+            <div class="tab-pane active" id="publications">La liste des publications
+
+             <br/>Le pseudo est : @Model.Pseudo)
+            </div>
             <div class="tab-pane" id="activites">La liste des dernières activités</div>
         </div>
     </div>

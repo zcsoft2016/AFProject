@@ -14,6 +14,14 @@ namespace ProjetOrion.Controllers
         [Authorize]
         public ActionResult IndexSuperManager()
         {
+            var userViewModel = ObtenirUtilisateurViewModelConnecte();
+            if (userViewModel != null)
+                return View(userViewModel);
+            return View("Error");
+        }
+
+        public UtilisateurViewModel ObtenirUtilisateurViewModelConnecte()
+        {
             using (var dal = new Dal())
             {
                 if (HttpContext.User.Identity.IsAuthenticated)
@@ -21,9 +29,9 @@ namespace ProjetOrion.Controllers
                     var idString = HttpContext.User.Identity.Name;
                     var id = int.Parse(idString);
                     var utilisateur = dal.ObtenirUtilisateur(id);
-                    return View(utilisateur);
+                    return new UtilisateurViewModel(utilisateur);
                 }
-                return View("Error");
+                return null;
             }
         }
 
@@ -34,9 +42,9 @@ namespace ProjetOrion.Controllers
             {
                 var utilisateur = dal.ObtenirUtilisateur(id);
                 if (utilisateur != null)
-                    return View(utilisateur);
+                    return View(new UtilisateurViewModel(utilisateur));
             }
-            return View();
+            return View("Error");
         }
 
         //[Authorize]
@@ -48,27 +56,43 @@ namespace ProjetOrion.Controllers
         [Authorize]
         public ActionResult AjouterUtilisateur()
         {
-            return View();
+            var viewModelConnecte = ObtenirUtilisateurViewModelConnecte();
+            var newUser = new Utilisateur();
+            if (viewModelConnecte != null)
+                return View(new UtilisateurViewModel(newUser, viewModelConnecte.Id));
+            return View("Error");
         }
 
         [HttpPost]
         [Authorize]
         public ActionResult AjouterUtilisateur(Utilisateur utilisateur)
         {
+            var viewModelConnecte = ObtenirUtilisateurViewModelConnecte();
+            var viewModel = new UtilisateurViewModel(utilisateur, viewModelConnecte.Id);
             using (IDal dal = new Dal())
             {
                 if (dal.PseudoExiste(utilisateur.Pseudo))
                 {
-                    ModelState.AddModelError("Pseudo", "Ce pseudo existe déjà");
-                    return View(utilisateur);
+                    //ModelState.AddModelError("Pseudo", "Ce pseudo existe déjà");
+                    ViewBag.ErrorPseudo = "Ce pseudo existe déjà";
+                    return View(viewModel);
                 }
                 if (dal.EmailExiste(utilisateur.Email))
                 {
-                    ModelState.AddModelError("Email", "Cet email existe déjà");
-                    return View(utilisateur);
+                    //ModelState.AddModelError("Email", "Cet email existe déjà");
+                    ViewBag.ErrorEmail = "Cet email existe déjà";
+                    return View(viewModel);
+                }
+                if (!string.IsNullOrEmpty(utilisateur.MotDePasse) && !string.IsNullOrEmpty(utilisateur.ConfirmerMotDePasse))
+                {
+                    if (!utilisateur.MotDePasse.Equals(utilisateur.ConfirmerMotDePasse))
+                    {
+                        ViewBag.ErrorPassword = "Les mots de passe ne concordent pas";
+                        return View(viewModel);
+                    }
                 }
                 if (!ModelState.IsValid)
-                    return View(utilisateur);
+                    return View(viewModel);
                 //utilisateur.Photo = Path.Combine(Server.MapPath("~/Content/img/profiles"), "default.jpg");
                 //todo to refactor
                 utilisateur.Photo = ContentImgPicturesProfiles + "default.jpg";
@@ -80,7 +104,8 @@ namespace ProjetOrion.Controllers
         [Authorize]
         public ActionResult TousLesUtilisateurs()
         {
-            return View();
+            var viewModelConnecte = ObtenirUtilisateurViewModelConnecte();
+            return View(viewModelConnecte);
         }
 
         [HttpPost]
@@ -112,7 +137,7 @@ namespace ProjetOrion.Controllers
                         }
                 }
                 dal.ModifierUtilisateur(user, motDePasse, photo);
-                return View("ProfilUtilisateur", utilisateur);
+                return View("ProfilUtilisateur", new UtilisateurViewModel(utilisateur));
             }
         }
 

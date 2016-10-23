@@ -33,7 +33,7 @@ namespace ProjetOrion.Controllers
 
         public ActionResult Index()
         {
-            UtilisateurViewModel viewModel = new UtilisateurViewModel { Authentifie = HttpContext.User.Identity.IsAuthenticated };
+            UtilisateurViewModel viewModel = new UtilisateurViewModel(HttpContext.User.Identity.IsAuthenticated);
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 viewModel.Utilisateur = dal.ObtenirUtilisateur(HttpContext.User.Identity.Name);

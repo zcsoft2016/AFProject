@@ -1,4 +1,4 @@
-﻿@model ProjetOrion.Models.Utilisateur
+﻿@model ProjetOrion.Models.UtilisateurViewModel
 
 @{
     ViewBag.Title = "Ajout Utilisateur - Super Manager";
@@ -6,59 +6,62 @@
 }
 
 @section Menu {
-    @Html.Partial("MenuSuperManager")
+    @Html.Partial("MenuSuperManager", @Model)
 }
 @section Footer {
 
 }
 
 <div class="row">
-        @using (Html.BeginForm("AjouterUtilisateur", "SuperManager", FormMethod.Post, new { @class = "col-lg-offset-2 col-lg-8 form-horizontal" }))
+        @using (Html.BeginForm("AjouterUtilisateur", "SuperManager", FormMethod.Post, new { @class = "col-lg-offset-1 col-lg-10 form-horizontal" }))
         {
             <fieldset>
                 <legend>Ajout d'un utilisateur</legend>
                 <div class="form-group row">
                     <div class="col-lg-4 col-md-4 col-sm-4">
-                        @Html.LabelFor(user => user.Pseudo, new { @class = "control-label pull-left" })
+                        @Html.LabelFor(user => user.Utilisateur.Pseudo, new { @class = "control-label pull-left" })
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-5">
-                        @Html.TextBoxFor(user => user.Pseudo, new {@class = "form-control", @id = "pseudo"})
+                        @Html.TextBoxFor(user => user.Utilisateur.Pseudo, new {@class = "form-control", @id = "pseudo"})
                     </div>
                     <div class="col-lg-3  col-md-3 col-sm-3">
-                        @Html.ValidationMessageFor(user=>user.Pseudo)
+                        @*@Html.ValidationMessageFor(user=>user.Utilisateur.Pseudo)*@
+                        @ViewBag.ErrorPseudo
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-lg-4 col-md-4 col-sm-4">
-                        @Html.LabelFor(user => user.Email, new { @class = "control-label pull-left" })
+                        @Html.LabelFor(user => user.Utilisateur.Email, new { @class = "control-label pull-left" })
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-5">
-                        @Html.TextBoxFor(user => user.Email, new {@class = "form-control", @type = "email", @id = "email" })
+                        @Html.TextBoxFor(user => user.Utilisateur.Email, new {@class = "form-control", @type = "email", @id = "email" })
                     </div>
                     <div class="col-lg-3  col-md-3 col-sm-3">
-                        @Html.ValidationMessageFor(user => user.Email)
+                        @*@Html.ValidationMessageFor(user => user.Utilisateur.Email)*@
+                        @ViewBag.ErrorEmail
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-lg-4 col-md-4 col-sm-4">
-                        @Html.LabelFor(user => user.MotDePasse, new { @class = "control-label pull-left" })
+                        @Html.LabelFor(user => user.Utilisateur.MotDePasse, new { @class = "control-label pull-left" })
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-5">
-                        @Html.PasswordFor(user => user.MotDePasse, new {@class = "form-control", @id = "motDePasse"})
+                        @Html.PasswordFor(user => user.Utilisateur.MotDePasse, new {@class = "form-control", @id = "motDePasse"})
                     </div>
                     <div class="col-lg-3  col-md-3 col-sm-3">
-                        @Html.ValidationMessageFor(user => user.MotDePasse)
+                        @*@Html.ValidationMessageFor(user => user.Utilisateur.MotDePasse)*@
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-lg-4  col-md-4 col-sm-4">
-                        @Html.LabelFor(user => user.ConfirmerMotDePasse, new { @class = "control-label pull-left" })
+                        @Html.LabelFor(user => user.Utilisateur.ConfirmerMotDePasse, new { @class = "control-label pull-left" })
                     </div>
                     <div class="col-lg-5  col-md-5 col-sm-5">
-                            @Html.PasswordFor(user => user.ConfirmerMotDePasse, new {@class = "form-control", @id = "confirmMotDePasse"})
+                            @Html.PasswordFor(user => user.Utilisateur.ConfirmerMotDePasse, new {@class = "form-control", @id = "confirmMotDePasse"})
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-3">
-                            @Html.ValidationMessageFor(user => user.ConfirmerMotDePasse)
+                            @*@Html.ValidationMessageFor(user => user.Utilisateur.ConfirmerMotDePasse)*@
+                           @ViewBag.ErrorPassword
                         </div>
                 </div>
                 <div class="form-group row">

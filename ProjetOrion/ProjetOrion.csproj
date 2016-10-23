@@ -139,6 +139,10 @@
     <Compile Include="Migrations\201609211401548_del_image.Designer.cs">
       <DependentUpon>201609211401548_del_image.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610231021331_modiffUser.cs" />
+    <Compile Include="Migrations\201610231021331_modiffUser.Designer.cs">
+      <DependentUpon>201610231021331_modiffUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AfCompContext.cs" />
     <Compile Include="Models\Dal.cs" />
@@ -190,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609211401548_del_image.resx">
       <DependentUpon>201609211401548_del_image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610231021331_modiffUser.resx">
+      <DependentUpon>201610231021331_modiffUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

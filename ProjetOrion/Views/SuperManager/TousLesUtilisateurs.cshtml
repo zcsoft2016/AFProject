@@ -1,5 +1,5 @@
 ﻿@using ProjetOrion.Models
-@model ProjetOrion.Models.Utilisateur
+@model ProjetOrion.Models.UtilisateurViewModel
 
 @{
     ViewBag.Title = "Tous les utilisateurs - Super Manager";
@@ -7,7 +7,7 @@
 }
 
 @section Menu {
-    @Html.Partial("MenuSuperManager")
+    @Html.Partial("MenuSuperManager", @Model)
 }
 @section Footer {
 

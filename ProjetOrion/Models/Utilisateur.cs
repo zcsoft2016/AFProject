@@ -23,8 +23,8 @@ namespace ProjetOrion.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmer le mot de passe ")]
-        [Compare("MotDePasse", ErrorMessage = "Le mot de passe et le mot de passe de confirmation ne correspondent pas."
-            )]
+        [StringLength(100, ErrorMessage = "La chaîne {0} doit comporter au moins {2} caractères.", MinimumLength = 6)]
+        //[Compare("MotDePasse", ErrorMessage = "Le mot de passe et le mot de passe de confirmation ne correspondent pas.")]
         public string ConfirmerMotDePasse { get; set; }
 
         public string Photo { get; set; }
@@ -34,6 +34,40 @@ namespace ProjetOrion.Models
     {
         public Utilisateur Utilisateur { get; set; }
         public bool Authentifie { get; set; }
+        public int Id { get; set; }
+
+        public UtilisateurViewModel()
+        {
+        }
+
+        public UtilisateurViewModel(Utilisateur user, int id)
+        {
+            Utilisateur = user;
+            Id = id;
+            Authentifie = true;
+        }
+
+        public UtilisateurViewModel(Utilisateur user, bool auth)
+        {
+            Utilisateur = user;
+            Authentifie = auth;
+            Id = user.Id;
+        }
+
+        public UtilisateurViewModel(bool auth)
+        {
+            Authentifie = auth;
+        }
+
+        public UtilisateurViewModel(Utilisateur user)
+        {
+            Utilisateur = user;
+            if (user != null)
+            {
+                Id = user.Id;
+                Authentifie = true;
+            }
+        }
     }
 
     public class LoginUtilisateur
